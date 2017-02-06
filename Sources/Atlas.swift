@@ -18,7 +18,7 @@ public struct Country {
 		return UnicodeScalar(regionalIndicatorSymbolA.value + distance)
 	}
 
-	func availableCountriesAndFlags() -> String {
+	static func availableCountriesAndFlags() -> String {
 		var resultString = String()
 		for regionCode in Locale.isoRegionCodes {
 			let country = Locale.current.localizedString(forRegionCode: regionCode)
