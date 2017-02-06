@@ -21,12 +21,11 @@ public struct Country {
 	public static func availableCountriesAndFlags() -> String {
 		var resultString = String()
 		for regionCode in Locale.isoRegionCodes {
-			guard 
-				let country = Locale.current.localizedString(forRegionCode: regionCode),
-				let flag = Country(code: regionCode).emojiFlag 
-				else { 
-					continue 
-				}
+			guard let country = Locale.current.localizedString(forRegionCode: regionCode) else { 
+				continue 
+			}
+			let flag = Country(code: regionCode).emojiFlag 
+			
 			resultString += "\(country): \(flag)\n"
 		}
 
